@@ -13,7 +13,7 @@ Step 4 : Once you create the service it will redirect you the homepage of the se
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr4.png)
 
 Step 5 : Goto the [program](https://github.com/shyampurk/dogtracker/blob/master/Block/main.js) and enter the apikey that you got from "step4" in the following lines<br>
-	apikey - line number 10 <br>
+	apikey - line number 14 <br>
 
 
 

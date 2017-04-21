@@ -148,14 +148,14 @@ export default (request) => {
                 else
                 {
                     // wrong url,size exceed condition else part                    
-                    request.message = {"queryDogBreed":queryDogBreed,"error":fetched_message_body.images[0]};
+                    request.message = {"messagecode":"1","messagetype":"resp","queryDogBreed":queryDogBreed,"error":fetched_message_body.images[0]};
                     return request;
             
                 }   
         }).catch((err) => {
         // handle request failure
         console.log("THE API CALL ERROR --> ",err);
-        request.message = {"queryDogBreed":queryDogBreed,"error":"error"};
+        request.message = {"messagecode":"1","messagetype":"resp","queryDogBreed":queryDogBreed,"error":"error"};
         return request.ok();
         });
 
