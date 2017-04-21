@@ -5,7 +5,7 @@ var path 		= require('path');
 var logger      = require('./logger');
 var index       = require('./routes/index');
 var app 		= express();
-// var HTTP_HOST 	= process.env.HOST || '139.59.4.109';
+
 var HTTP_HOST 	= process.env.HOST || '127.0.0.1';
 var HTTP_PORT 	= process.env.PORT || 4010;
 
