@@ -1,9 +1,21 @@
+/***********************************************************
+
+				DOG TRACKER
+
+************************************************************/
+
+// Initializing pubnub
+
 var pubnub = PUBNUB({
     publish_key   : "pub-c-cab5bb0d-dfef-4115-ab0c-670977ede3fb",
     subscribe_key : "sub-c-0971ddba-19b8-11e7-aca9-02ee2ddab7fe"
 });
 
+// Initializing Mapbox
+
 L.mapbox.accessToken = 'pk.eyJ1IjoiYXJhdmluZGMiLCJhIjoiOTBhNDM0ZWNmYTc3MDYzMjA0MjBmY2E5NGU3YmQ0MDYifQ.5s9Z-KPF9yvgT05nO12HOQ';
+
+// Initializing map with default view
 
 var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([39.8622325,-8.7855566], 2);
@@ -11,15 +23,27 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 var geojson = []
 var popup = L.popup();
 
+/***************************************************************************************
+	Function      : page load/reload
+	Channel       : dogtracker_req_resp
+	Description   : Publishes to pubnub channel to receive all dog breeds from db
+****************************************************************************************/
+
 $(window).load(function () {
-	var channel = 'dogtracker';
+	var channel = 'dogtracker_req_resp';
 	var message = {
 					"messagetype": "req",
-					"messagecode": "0",
-					"imageurl":""
+					"messagecode": "0"
 				}
 	pubPublish(channel,message)
 });
+
+/***************************************************************************************
+	Function      : onMapClick
+	Channel       : dogtracker_marker_position
+	Description   : Publishes lat/lon position to server through this pubnub channel and
+					opens the popup for uploading image to server 
+****************************************************************************************/
 
 function onMapClick(e){
 	popup
@@ -39,26 +63,29 @@ function onMapClick(e){
                 } 
             }
         );
-	var channel = 'send-position';
+	var channel = 'dogtracker_marker_position';
 	var message = {"lat":e.latlng.lat.toString(),"lon":e.latlng.lng.toString()}
 	
 	console.log(message)
 	pubPublish(channel,message)
 }
 
-
+/***************************************************************************************
+	Function      : pubnub subscribe
+	Channel       : dogtracker_req_resp
+	Description   : Subscribes to pubnub channel to receive marker positions on map
+****************************************************************************************/
 
 pubnub.subscribe({
-    channel  : "dogtracker",
+    channel  : "dogtracker_req_resp",
     message : function(message) {
     	console.log(message);
     	var myLayer = L.mapbox.featureLayer().addTo(map);
 	
-    	if (message.messagecode == 1) {
-    		console.log("dog breed: ",(message.queryDogBreed).length)
-    		if ((message.queryDogBreed).length == 0) {
-    			console.log("Could'nt find dog breed ")
-    			alert("Could'nt find dog breed, Try again")
+    	if (message.messagecode == 1 && message.messagetype == "resp") {
+    		if (message.queryDogBreed == null) {
+    			console.log("Unknown Dog Breed")
+    			alert("Unknown Dog Breed, Try again")
     		}else{
 
 		    	geojson.push({
@@ -68,7 +95,7 @@ pubnub.subscribe({
 			          coordinates: [message.geolocation.lon, message.geolocation.lat]
 			        },
 			        properties: {
-			            // title: message.queryDogBreed,
+			            title: 'Location :'+message.geolocation.address,
 			            description: message.queryDogBreed ,
 			            image: message.imageurl,
 			            icon: {
@@ -80,7 +107,7 @@ pubnub.subscribe({
 			    })
 			}
 			popup.remove();
-	    }else if(message.messagecode == 0){
+	    }else if(message.messagecode == 0 && message.messagetype == "resp"){
 	    	
 	    	if(message.dbval != null){
 
@@ -96,7 +123,7 @@ pubnub.subscribe({
 				        }
 				        ,
 				        properties: {
-				          // title: message.queryDogBreed,
+				          title: 'Location :'+message.dbval[i].geolocation.address,
 				          description: message.dbval[i].breed ,
 				          image: message.dbval[i].url,
 				          icon: {
@@ -107,6 +134,12 @@ pubnub.subscribe({
 				        }
 				    })
 				}
+			}else if(message.messagecode == 3 && message.messagetype == "resp"){
+				console.log("X-Auth-Token Expired")
+				alert("X-Auth-Token Expired ");
+			}else if(message.messagecode == 4 && message.messagetype == "resp"){
+				console.log("GeoCoding Error")
+				alert("GeoCoding Error , Try again !!!");
 			}else{
 				console.log("db null")
 				alert("Database value is NULL , Try uploading images !!!");
@@ -135,6 +168,12 @@ pubnub.subscribe({
 });
 
 map.on('click', onMapClick); 
+
+/***************************************************************************************
+	Function      : pubnub publish
+	Channel       : dogtracker_req_resp and dogtracker_marker_position
+	Description   : Publishes message to pubnub channel 
+****************************************************************************************/
 
 function pubPublish(channel,message){
 	pubnub.publish({
