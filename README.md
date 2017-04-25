@@ -37,13 +37,39 @@ The container to store the images is created.
 
 [here](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) is the docs link to explore the object storage api
 
+# Working with object storage api
+
 Once the object storage api is created we have to follow few steps 
 1) Authenticating with Keystone,<br> 
-	[Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html)
+	To interact with the service, you must authenticate your Object Storage instance with Keystone to obtain your URL.<br>
+	Follow is  [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) to do the process.<br>
+	You have to give your credentials to get authentication process done, this process will give you<br>.
+		a) the "X-Subject-Token", it is the authentication token.<br> 
+		b) Values necessary to form the URL for the object storage service.<br>
+	Please save these details.<br>	
 	
+2) Constructing Your URL <br>
+	You got the URL for the object storage service in the above step, to access your image your URL should particularly point the container and the image. 
+	Follow this [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_constructing.html) to do the process.<br>
+	You will get the full URL to acces the image stored in the object storage.<br>
 
 
-	2) Constructing Your URL <br>
-	3) Configuring the Swift CLI <br>
+
+3) Configuring the Swift CLI <br>
+	To make the images accessible publicly we need to make the container public.<br>	
+	Follow this [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_configuring.html) to install swift client<br>
+	After successfully done the above procedure Run the following command to make the container public<br>
+		Command :	
+			swift post -r '.r:*,.rlistings' "containername".<br>
+		Example :
+			swift post -r '.r:*,.rlistings' DogImages <br>
+
+
+
+# Auth Token update
+
+	To generate the auth token follow "1" under "Working with object storage api" The "X-Subject-Token"
+	is what you required from that step.
+	
 
 	
