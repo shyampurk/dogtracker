@@ -13,7 +13,7 @@ Step 4 : Once you create the service it will redirect you the homepage of the se
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr4.png)
 
 Step 5 : Goto the [program](https://github.com/shyampurk/dogtracker/blob/master/Block/main.js) and enter the apikey that you got from "step4" in the following lines<br>
-	apikey - line number 14 <br>
+	apikey - line number 16 <br>
 
 
 # Object Storage api
@@ -45,11 +45,11 @@ Once the object storage api is created we have to follow few steps
 	Follow is  [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) to do the process.<br>
 	You have to give your credentials to get authentication process done, this process will give you<br>.
 		a) the "X-Subject-Token", it is the authentication token.<br> 
-		b) Values necessary to form the URL for the object storage service.<br>
+		b) URL for the object storage service.<br>
 	Please save these details.<br>	
 	
 2) Constructing Your URL <br>
-	You got the URL for the object storage service in the above step, to access your image your URL should particularly point the container and the image. 
+	You got the URL for the object storage service in the above step, to access your image your URL should particularly point the container and the image.<br> 
 	Follow this [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_constructing.html) to do the process.<br>
 	You will get the full URL to acces the image stored in the object storage.<br>
 
@@ -68,8 +68,7 @@ Once the object storage api is created we have to follow few steps
 
 # Auth Token update
 
-	To generate the auth token follow "1" under "Working with object storage api" The "X-Subject-Token"
-	is what you required from that step.
+	To generate the auth token follow "step 1" under "Working with object storage api" in the terminal, The "X-Subject-Token" is what you required from that step.
 	
 
 	

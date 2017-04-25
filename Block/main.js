@@ -5,10 +5,12 @@ export default (request) => {
     
     // Variables for functional purpose 
     var queryDogBreed = null;
-    var queryDogScore = 0;
-    var kvstoreKEY = "dog-image-tracker";
-    var message_dict = [];
-    var proceed = false;
+	var queryDogBreedtemp = null;
+	var queryDogBreedsplit = null;
+	var queryDogScore = 0;
+	var kvstoreKEY = "dog-image-tracker";
+	var message_dict = [];
+	var proceed = false;
 
     // api key for the visual recognition api
     var api_key = 'd8e5e6b8c43ec6a074c632962cd51b584f4d19fb';
@@ -80,27 +82,30 @@ export default (request) => {
                                     queryDogScore = classes[i].score;
                                     
                                     // condition to avoid the dog suffix in the return result 
-                                    var queryDogBreedtemp = classes[i].class;
-                                    var queryDogBreedsplit = queryDogBreedtemp.split(" ");
-                                    if (queryDogBreedsplit.length>1){
-                                        queryDogBreed = "";
+                                    queryDogBreedtemp = classes[i].class;
                                     
-                                        for (var j=0;j<queryDogBreedsplit.length-1;j++){
-                                            queryDogBreed += queryDogBreedsplit[j]+" ";
-                                        }
-                                        console.log("Inside the forloop",i,queryDogScore,queryDogBreed);
-                                    }
-                                    else{
-                                        queryDogBreed = queryDogBreedtemp;
-                                    }
                                 } // high score check ends here
 
                                 else{
                                     // high score check else part
-                                    console.log("else part",i,classes[i].score,classes[i].class);
+                                    console.log("Returned results with Less Breed Score and Breed",i,classes[i].score,classes[i].class);
                                 }
-                            } //exact result check ends here
-                        } // for loop ends here
+                            } 
+                        } 
+                        if (queryDogBreedtemp !== null){
+                        	queryDogBreedsplit = queryDogBreedtemp.split(" ");
+	                        if (queryDogBreedsplit.length>1){
+	                            queryDogBreed = "";
+	                        
+	                            for (var j=0;j<queryDogBreedsplit.length-1;j++){
+	                                queryDogBreed += queryDogBreedsplit[j]+" ";
+	                            }
+	                            console.log("Breed score and Breed from returned Result",i,queryDogScore,queryDogBreed);
+	                        }
+	                        else{
+	                            queryDogBreed = queryDogBreedtemp;
+	                        }	
+                        }                        
 
                         // forming the response message for the Find Dog Breed operation
                         request.message = {"messagecode":"1","messagetype":"resp","queryDogBreed":queryDogBreed,"geolocation":geolocation,"imageurl":ImageURL};
