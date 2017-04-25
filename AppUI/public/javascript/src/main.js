@@ -134,17 +134,20 @@ pubnub.subscribe({
 				        }
 				    })
 				}
-			}else if(message.messagecode == 3 && message.messagetype == "resp"){
-				console.log("X-Auth-Token Expired")
-				alert("X-Auth-Token Expired ");
-			}else if(message.messagecode == 4 && message.messagetype == "resp"){
-				console.log("GeoCoding Error")
-				alert("GeoCoding Error , Try again !!!");
 			}else{
 				console.log("db null")
 				alert("Database value is NULL , Try uploading images !!!");
 			}
-	    }
+	    }else if(message.messagecode == 3 && message.messagetype == "resp"){
+			console.log("X-Auth-Token Expired")
+			alert("X-Auth-Token Expired ");
+		}else if(message.messagecode == 4 && message.messagetype == "resp"){
+			console.log("GeoCoding Error")
+			alert("GeoCoding Error , Try again !!!");
+		}else{
+			console.log("Error, Try again !!!")
+			alert("Error, Try again !!!");
+		}
 		
 		myLayer.on('layeradd', function(e) {
 		    var marker = e.layer,

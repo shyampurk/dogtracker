@@ -123,25 +123,21 @@ router.post('/uploadimage',function(req,res,next){
             return res.end("Error uploading file.");
         }
         else{
-        	// console.log(req.file.filename)
-        	// console.log(req.file.path)
-        	// console.log(req.file)
+        	
         	logger.debug("Multer image Uploaded file == >",req.file)
         	var options = {
 			    url: 'https://dal.objectstorage.open.softlayer.com/v1/AUTH_b7de27866f2e4e87862da9183a8983af/DogImages/'+req.file.filename,
 			    headers:{ 
-			    	'X-Auth-Token':'gAAAAABY-ZyqzEugOrlrUk-XHo0RI0H9W99y-HAhKJ-XQjF8OzjyzUeZc0caQVNVZXUOtbmiH-pbLPJuG79akK9VlTMcpwFG9WhAADXc_YMrNkzZNWBZKEObXgB3qvsrLdAUYqkMz3oBYRhZ3FaDd80Kvp72J3DZq05IR0M-1ldVLd1mTI2ZNko' 
+			    	'X-Auth-Token':'gAAAAABY_tqVO4cci4O0wgMoh_i6mNTgkbNpvktSS6pIXf7BHAvh4v7ns-4SJ-J_HUndv29lX_7AwIy8-iNRpKVdy046j47K50meyeKG0pTHLAZHq8W3PG8XG4gZufXCtSitPoTlJBrTtmm7BqdJp5LbmoIHfJJxtLnUMBOlZTGhs-AX-cx7YUw' 
 			    }
 			};
 
 			var requestStream = request.put(options);
 			var sendfile = fs.createReadStream('./public/uploads/'+req.file.filename).pipe(requestStream);
 			requestStream.on('response', function (response) {
-				// console.log(response.statusCode) 
-				// console.log(response.headers['content-type'])
+				
 				logger.debug("Object storage response statusCode ==> ",response.statusCode)
 				if(response.statusCode == 401){
-					// console.log("X-Auth-Token - expired")
 					logger.debug("X-Auth-Token - expired")
 					var authError = {
 							 	"messagetype": "resp",
@@ -156,7 +152,7 @@ router.post('/uploadimage',function(req,res,next){
 					    if(!err){
 					    	console.log(geoData.features.length)
 						    if(geoData.features.length == 0){
-						    	var country = "Unknown address"
+						    	var country = "Unknown Location"
 						    }else{
 							    var count = geoData.features.length - 1
 							    console.log("count :",count)

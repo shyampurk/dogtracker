@@ -146,3 +146,45 @@
 {"level":"info","message":"app running on host:port => 127.0.0.1:4010","timestamp":"2017-04-21T08:09:27.067Z"}
 {"level":"info","message":"Dog Tracker Data - the logs are being captured logFile","timestamp":"2017-04-21T08:11:54.787Z"}
 {"level":"info","message":"app running on host:port => 127.0.0.1:4010","timestamp":"2017-04-21T08:11:55.003Z"}
+{"level":"info","message":"Dog Tracker Data - the logs are being captured logFile","timestamp":"2017-04-25T05:07:21.455Z"}
+{"level":"info","message":"app running on host:port => 127.0.0.1:4010","timestamp":"2017-04-25T05:07:22.788Z"}
+{"lat":"38.82259097617713","lon":"-105.46875000000001","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:07:50.009Z"}
+{"fieldname":"userPhoto","originalname":"pexels-photo-26445.jpg","encoding":"7bit","mimetype":"image/jpeg","destination":"./public/uploads","filename":"userPhoto-1493096891796.jpg","path":"public/uploads/userPhoto-1493096891796.jpg","size":18910,"level":"debug","message":"Multer image Uploaded file == >","timestamp":"2017-04-25T05:08:11.803Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  401","timestamp":"2017-04-25T05:08:13.319Z"}
+{"level":"debug","message":"X-Auth-Token - expired","timestamp":"2017-04-25T05:08:13.319Z"}
+{"level":"info","message":"Dog Tracker Data - the logs are being captured logFile","timestamp":"2017-04-25T05:10:29.473Z"}
+{"level":"info","message":"app running on host:port => 127.0.0.1:4010","timestamp":"2017-04-25T05:10:29.679Z"}
+{"lat":"58.81374171570782","lon":"-124.80468750000001","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:10:35.926Z"}
+{"fieldname":"userPhoto","originalname":"pexels-photo-191340.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"./public/uploads","filename":"userPhoto-1493097041875.jpeg","path":"public/uploads/userPhoto-1493097041875.jpeg","size":12022,"level":"debug","message":"Multer image Uploaded file == >","timestamp":"2017-04-25T05:10:41.885Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  401","timestamp":"2017-04-25T05:10:43.485Z"}
+{"level":"debug","message":"X-Auth-Token - expired","timestamp":"2017-04-25T05:10:43.485Z"}
+{"level":"info","message":"Dog Tracker Data - the logs are being captured logFile","timestamp":"2017-04-25T05:14:17.839Z"}
+{"level":"info","message":"app running on host:port => 127.0.0.1:4010","timestamp":"2017-04-25T05:14:18.055Z"}
+{"lat":"62.59334083012024","lon":"46.05468750000001","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:14:22.786Z"}
+{"fieldname":"userPhoto","originalname":"chihuahua-sobel-dog-50718.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"./public/uploads","filename":"userPhoto-1493097267342.jpeg","path":"public/uploads/userPhoto-1493097267342.jpeg","size":18697,"level":"debug","message":"Multer image Uploaded file == >","timestamp":"2017-04-25T05:14:27.350Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:14:29.230Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:14:29.230Z"}
+{"level":"debug","message":"Reverse geocode response(address) ==>  Russia","timestamp":"2017-04-25T05:14:30.027Z"}
+{"lat":"12.211180191503997","lon":"78.39843750000001","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:14:36.790Z"}
+{"fieldname":"userPhoto","originalname":"papillon-dog-animal-59969.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"./public/uploads","filename":"userPhoto-1493097281945.jpeg","path":"public/uploads/userPhoto-1493097281945.jpeg","size":20765,"level":"debug","message":"Multer image Uploaded file == >","timestamp":"2017-04-25T05:14:41.949Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:14:43.501Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:14:43.501Z"}
+{"level":"debug","message":"Reverse geocode response(address) ==>  India","timestamp":"2017-04-25T05:14:44.120Z"}
+{"lat":"-13.581920900545844","lon":"-160.6640625","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:14:49.232Z"}
+{"fieldname":"userPhoto","originalname":"pexels-photo-356378.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"./public/uploads","filename":"userPhoto-1493097295931.jpeg","path":"public/uploads/userPhoto-1493097295931.jpeg","size":25418,"level":"debug","message":"Multer image Uploaded file == >","timestamp":"2017-04-25T05:14:55.932Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:14:57.582Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:14:57.582Z"}
+{"level":"debug","message":"Reverse geocode response(address) ==>  Unknown address","timestamp":"2017-04-25T05:14:58.159Z"}
+{"level":"info","message":"Dog Tracker Data - the logs are being captured logFile","timestamp":"2017-04-25T05:16:12.895Z"}
+{"level":"info","message":"app running on host:port => 127.0.0.1:4010","timestamp":"2017-04-25T05:16:13.105Z"}
+{"lat":"27.68352808378776","lon":"-152.92968750000003","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:16:23.379Z"}
+{"fieldname":"userPhoto","originalname":"dalmatians-dog-animal-head.jpg","encoding":"7bit","mimetype":"image/jpeg","destination":"./public/uploads","filename":"userPhoto-1493097387803.jpg","path":"public/uploads/userPhoto-1493097387803.jpg","size":27312,"level":"debug","message":"Multer image Uploaded file == >","timestamp":"2017-04-25T05:16:27.815Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:16:29.469Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:16:29.469Z"}
+{"level":"debug","message":"Reverse geocode response(address) ==>  Unknown Location","timestamp":"2017-04-25T05:16:30.075Z"}
+{"lat":"18.93746442964186","lon":"-71.54296875000001","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:16:38.732Z"}
+{"fieldname":"userPhoto","originalname":"d2.jpeg","encoding":"7bit","mimetype":"image/jpeg","destination":"./public/uploads","filename":"userPhoto-1493097403622.jpeg","path":"public/uploads/userPhoto-1493097403622.jpeg","size":57526,"level":"debug","message":"Multer image Uploaded file == >","timestamp":"2017-04-25T05:16:43.625Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:16:46.221Z"}
+{"level":"debug","message":"Object storage response statusCode ==>  201","timestamp":"2017-04-25T05:16:46.221Z"}
+{"level":"debug","message":"Reverse geocode response(address) ==>  Dominican Republic","timestamp":"2017-04-25T05:16:47.486Z"}
+{"lat":"27.916766641249065","lon":"-70.70800781250001","level":"debug","message":"marker_position ==> ","timestamp":"2017-04-25T05:17:15.156Z"}
