@@ -12,8 +12,9 @@ To get Mapbox Access Token , login to your mapbox account and select myaccess to
         
         https://www.mapbox.com/studio/account/tokens/
 
-To get ObjectStorage API URL & X-Auth-Token ,follow this procedure in main [README](https://github.com/shyampurk/dogtracker/blob/master/README.md) 
-section under the heading AuthToken Update. 
+To get ObjectStorage API URL & X-Auth-Token ,follow this procedure in main [README](https://github.com/shyampurk/dogtracker/blob/master/README.md) section under the heading "Working with object storage api"
+        
+        Follow step 1 in that heading for getting API URL and X-Auth-Token 
 
 ### STEP 1 : 
 Download/fork the source code of this repository and update the keys at the application server side and client side
