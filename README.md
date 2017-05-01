@@ -41,36 +41,37 @@ The container to store the images is created.
 
 Once the object storage api is created we have to follow few steps to upload and access the images in the object storage.
 
-Step 1 : Authenticating with Keystone,<br> 
-	To interact with the service, you must authenticate your Object Storage instance with Keystone to obtain your URL
-	<br>Follow is  [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) to do the process.<br>
-	You have to give your credentials to get authentication process done, this process will give you<br>.
+## Step 1 : Authenticating with Keystone,
+To interact with the service, you must authenticate your Object Storage instance with Keystone to obtain your URL
+Follow is  [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) to do the process.
+You have to give your credentials to get authentication process done, this process will give you.
 
-	a) the "X-Subject-Token", it is the authentication token.<br> 
-	b) URL for the object storage service.<br>
-	Please save these details.<br>
+	a) the "X-Subject-Token", it is the authentication token.
+	b) URL for the object storage service.
+
+Please save these details.
 	
-Note : The "X-Subject-Token" we got it in this step is the authentication required to upload the images in the object storage.To create the "X-Subject-Token" we have to do this step when we required.<br>
+### Note : 
+	The "X-Subject-Token" we got it in this step is the authentication required to upload the images in the object storage.
+	To create the "X-Subject-Token" we have to do this step when we required.
 	
 	
-Step 2 : Constructing Your URL <br>
-	You got the URL for the object storage service in the above step, to access your image your URL should particularly point the container and the image.
-	<br> 
-	Follow this [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_constructing.html) to do the process.<br>
-	You will get the full URL to acces the image stored in the object storage.<br>
+## Step 2 : Constructing Your URL 
+
+You got the URL for the object storage service in the above step, to access your image your URL should particularly point the container and the image.
+Follow this [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_constructing.html) to do the process.
+You will get the full URL to acces the image stored in the object storage.
 
 
-
-Step 3 : Configuring the Swift CLI <br>
-	To make the images accessible publicly we need to make the container public.
-	<br>	
-	Follow this [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_configuring.html) to install swift client<br>
-	After successfully done the above procedure Run the following command to make the container public<br>
-	Command :<br>	
+## Step 3 : Configuring the Swift CLI 
+To make the images accessible publicly we need to make the container public.
+Follow this [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_configuring.html) to install swift client
+After successfully done the above procedure Run the following command to make the container public
+### Command :	
 		swift post -r '.r:*,.rlistings' "containername".
-		<br>
-	Example :<br>
+		
+### Example :
 		swift post -r '.r:*,.rlistings' DogImages 
-		<br>
+		
 
 Now You got your Authentication Token, and URL to access the image, and we made the container publicly accessible.Now you can upload the images to the container and check those uploaded images by using the images URL.
