@@ -43,7 +43,7 @@ Once the object storage api is created we have to follow few steps to upload and
 
 ## Step 1 : Authenticating with Keystone,
 To interact with the service, you must authenticate your Object Storage instance with Keystone to obtain your URL
-Follow is  [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) to do the process.
+Follow this  [Link](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) to do the process.
 You have to give your credentials to get authentication process done, this process will give you.
 
 	a) the "X-Subject-Token", it is the authentication token.
