@@ -44,7 +44,7 @@ To RUN the server
     
     https://nodejs.org/en/download/
     
-2.Open the AppUI directory in terminal and run the node application as
+2.Open the AppUI directory in terminal, install all the node package dependencies and run the node application as
 
     node dogtracker_server.js
 
@@ -56,7 +56,7 @@ Alternatively you can host the application on a cloud server and access it via i
 
 ### Clearing the application state
 
-If you want to clear the previously uuploaded dog images then send the following URL
+If you want to clear the previously uploaded dog images then send the following URL
 
         http://139.59.4.109:4010/cleardb
   
