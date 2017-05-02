@@ -1,14 +1,16 @@
-# DogTracker Application
+# DogTracker UI Application
 
-To run the client application , perform the following steps
+To run the client UI application , perform the following steps
 
 ## PREREQUISITES :
 
-To get PubNub Keys , login to your pubnub account and click create a new app and get the keyset for the following application.
+You will need PubNub, MapBox and IBM Object Storage API credentials for running the UI app. 
+
+To get PubNub Keys , login to your pubnub account and click create a new app and get the keyset for this application.
         
         https://admin.pubnub.com/#/login
         
-To get Mapbox Access Token , login to your mapbox account and select myaccess tokens link and click create new token.
+To get Mapbox Access Token , login to your mapbox account and select myaccess tokens link and click "create new token".
         
         https://www.mapbox.com/studio/account/tokens/
 
@@ -16,7 +18,9 @@ To get ObjectStorage API URL & X-Auth-Token ,follow this procedure in main [READ
         
         Follow step 1 in that heading for getting API URL and X-Auth-Token 
 
-### STEP 1 : 
+### Steps to launch the App
+
+#### STEP 1 : 
 Download/fork the source code of this repository and update the keys at the application server side and client side
     
     ### Pubnub Keys: Change the PubNub key in the following files
@@ -33,10 +37,10 @@ Download/fork the source code of this repository and update the keys at the appl
     ### Object Storage API X-Auth-Token: Change the Object Storage API X-Auth-Token in the following file
     1. routes/routes.js --> line number 131
 
-### STEP 2 : 
+#### STEP 2 : 
 To RUN the server
     
-1.This application require nodejs installed in client system , to download and install nodejs follow this link.
+1.This application require nodejs. To download and install nodejs on the hosting server, follow this link.
     
     https://nodejs.org/en/download/
     
@@ -44,9 +48,15 @@ To RUN the server
 
     node dogtracker_server.js
 
-3.Open the following link in your browser
+3.Open the following link in your browser (assuming that you are running the Node.js on a local server)
 
     http://127.0.0.1:4010/
     
+Alternatively you can host the application on a cloud server and access it via its IP Address.
 
+### Clearing the application state
+
+If you want to clear the previously uuploaded dog images then send the following URL
+
+        http://139.59.4.109:4010/cleardb
   
