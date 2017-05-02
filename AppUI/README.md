@@ -23,19 +23,19 @@ To get ObjectStorage API URL & X-Auth-Token ,follow this procedure in main [READ
 #### STEP 1 : 
 Download/fork the source code of this repository and update the keys at the application server side and client side
     
-    ### Pubnub Keys: Change the PubNub key in the following files
-    1. routes/routes.js --> line numbers 25,26
+    ### Pubnub Keys: Change the PubNub key (obtained from step 4 of BLOCK creation) in the following files
+    1. routes/index.js --> line numbers 25,26
     2. public/javascript/src/main.js --> line numbers 10,11
     
     ### Mapbox AccessToken : Change the Mapbox AccessToken in the following files
-    1. routes/routes.js --> line number 31
+    1. routes/index.js --> line number 31
     2. public/javascript/src/main.js --> line number 16
     
     ### Object Storage API URL: Change the Object Storage API URL in the following file
-    1. routes/routes.js --> line numbers 129,166
+    1. routes/index.js --> line numbers 129,166
     
     ### Object Storage API X-Auth-Token: Change the Object Storage API X-Auth-Token in the following file
-    1. routes/routes.js --> line number 131
+    1. routes/index.js --> line number 131
 
 #### STEP 2 : 
 To RUN the server
