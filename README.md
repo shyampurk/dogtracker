@@ -11,6 +11,8 @@ To run this demo, you need to following services
 
 You will also need a server for hosting the Node.js web app. Refer the [APPUI README](https://github.com/shyampurk/dogtracker/blob/master/AppUI/README.md) file. 
 
+Check the [json message formats](https://github.com/shyampurk/dogtracker/blob/master/messageformat.txt) for all messages exchanged between the app and BLOCK.
+
 # Watson Visual Recognition API
 
 Watson Visual Regotnition API is needed to identify the dog breed name from a dog image. 
