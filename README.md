@@ -29,7 +29,6 @@ Select the Visual Recognition service under the Watson Services.
 Give the service name and scroll down the page,select the Free plan (you can see more about pricing options in that page) and click on the "create" button.
 
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr2.png)
-<hr>
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr3.png)
 
 ## Step 4 : 
@@ -63,8 +62,8 @@ Select the Object Storage service under the Storage Services.
 
 Give the service name and scroll down the page. Select the Free plan, you can see more about pricing there in that page, and click on the "create" button.
 
-![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob2.png)
-<hr>
+![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob2.png)<hr>
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob3.png)
 
 ## Step 4 :
