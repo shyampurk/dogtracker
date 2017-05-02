@@ -1,6 +1,6 @@
 # DogTracker Event Handler for PubNub BLOCKS
 
-# Pubnub block creation.
+# Pubnub BLOCK creation.
 
 ## Step 1 : 
 Login to the Pubnub account with the valid credentials.
@@ -33,13 +33,13 @@ Create the Event Handler by clicking CREATE button at the bottom.
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Block/dg6.png)
 
 ## Step 7 :
-Give the Name of the Event handler, Channel to communicate with the block and the option of when block code should execute(Before of After publish of the message).
+Give the Name of the Event handler, Channel to communicate with the block and the option of when block code should execute(Befor Publish or Fire) .
          
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Block/dg7.png)
 
 ## Step 8 : 
 
-Copy the block code in the text area from [here](https://github.com/shyampurk/dogtracker/blob/master/Block/main.js), and save it.
+Copy the block code in the text area from [here](https://github.com/shyampurk/dogtracker/blob/master/Block/main.js), and save it. Update the Watson Visual Recognition API credentials on the code ( As per step 4 of "Watson Visual Recognition API" section in main README file)
 
 ## Step 9 : 
 Click on the Start block button(top right) to start the block.
@@ -51,4 +51,4 @@ Click on the Start block button(top right) to start the block.
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Block/dg9.png)
 
 
-Your block code is now running                  
+Your block code is now running.                  
