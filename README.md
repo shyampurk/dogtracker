@@ -15,41 +15,81 @@ You will also need a server for hosting the Node.js web app. Refer the [APPUI RE
 
 Watson Visual Regotnition API is needed to identify the dog breed name from a dog image. 
 
-Step 1 : Login to the Bluemix account with the valid credentials, and goto Catalog.<br>
-Step 2 : Select the Visual Recognition service under the Watson Services.
+## Step 1 : 
+
+Login to the Bluemix account with the valid credentials, and goto Catalog.
+
+## Step 2 : 
+
+Select the Visual Recognition service under the Watson Services.
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr1.png)
-Step 3 : Give the service name and scroll down the page,select the Free plan (you can see more about pricing options in that page) and click on the "create" button.
+
+## Step 3 :
+
+Give the service name and scroll down the page,select the Free plan (you can see more about pricing options in that page) and click on the "create" button.
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr2.png)
+<hr>
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr3.png)
-Step 4 : Once you create the service, it will redirect you to the homepage of the service. There, click on the "Service Credentials" to get the apikey to access the visual recognition api. Make a note of this API key.
+
+## Step 4 : 
+
+Once you create the service, it will redirect you to the homepage of the service. There, click on the "Service Credentials" to get the apikey to access the visual recognition api. Make a note of this API key.
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Visualrecognition/vr4.png)
 
-Step 5 : Goto the BLOCK [program](https://github.com/shyampurk/dogtracker/blob/master/Block/main.js) and enter the apikey that you got from "step4" in the following lines<br>
-	apikey - line number 16 <br>
+## Step 5 :
+
+Goto the BLOCK [program](https://github.com/shyampurk/dogtracker/blob/master/Block/main.js) and enter the apikey that you got from "step4" in the following lines
+
+			apikey - line number 16 
 
 
 # Object Storage API
 
 Object Storage API is used to store the dog images on the cloud. These images are accessed by the Watson Visual Recognition service as well as the web UI. 
 
-Step 1 : Login to the Bluemix account with the valid credentials, and goto Catalog.<br>
-Step 2 : Select the Object Storage service under the Storage Services.
+## Step 1 : 
+
+Login to the Bluemix account with the valid credentials, and goto Catalog.<br>
+
+## Step 2 :
+
+Select the Object Storage service under the Storage Services.
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob1.png)
-Step 3 : Give the service name and scroll down the page. Select the Free plan, you can see more about pricing there in that page, and click on the "create" button.
+
+## Step 3 :
+
+Give the service name and scroll down the page. Select the Free plan, you can see more about pricing there in that page, and click on the "create" button.
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob2.png)
+<hr>
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob3.png)
-Step 4 : Once you create the service it will redirect you the homepage of the service. There click on the "Service Credentials", Make a note of all the values there in the credentials.
+
+## Step 4 :
+
+Once you create the service it will redirect you the homepage of the service. There click on the "Service Credentials", Make a note of all the values there in the credentials.
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob4.png)
-Step 5 : Next, you need to create a container. To create a container goto "Manage" from the menu and click on the "Select Action" drop down menu and select the "Create Container".
+
+## Step 5 : 
+
+Next, you need to create a container. To create a container goto "Manage" from the menu and click on the "Select Action" drop down menu and select the "Create Container".
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob5.png)
-Step 6 : Give a name for the container.
+
+## Step 6 : 
+
+Give a name for the container.
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob6.png)
+
 With this we now have a container to store the images.
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/objectstorage/ob7.png)
 
-
-
-[here](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) is the docs link to explore the object storage api
+	[here](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) is the docs link to explore the object storage api
 
 # Working with Object Storage API
 
