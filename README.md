@@ -1,7 +1,17 @@
 # Dog Tracker
 Image Classification for identifying dog breeds using Watson Visual Recognition Service and PubNub BLOCKS
 
-# Watson Visual Recognition api
+To run this demo, you need to following services
+
+1. IBM Watson Visual Recognition. Refer the steps below under "Watson Visual Recognition API".
+
+2. IBM CLoud Object Storage. Refer the steps below under "Object Storage API" & "Working with Object Storage API".
+
+3. PubNub BLOCKS . Refer the [Block README](https://github.com/shyampurk/dogtracker/blob/master/Block/README.md) file
+
+You will also need a server for hosting the Node.js web app. Refer the [APPUI README](https://github.com/shyampurk/dogtracker/blob/master/AppUI/README.md) file. 
+
+# Watson Visual Recognition API
 
 Step 1 : Login to the Bluemix account with the valid credentials, and goto Catalog.<br>
 Step 2 : Select the Visual Recognition service under the Watson Services.
@@ -16,7 +26,7 @@ Step 5 : Goto the [program](https://github.com/shyampurk/dogtracker/blob/master/
 	apikey - line number 16 <br>
 
 
-# Object Storage api
+# Object Storage API
 
 Step 1 : Login to the Bluemix account with the valid credentials, and goto Catalog.<br>
 Step 2 : Select the Object Storage service under the Storage Services.
@@ -37,7 +47,7 @@ The container to store the images is created.
 
 [here](https://console.ng.bluemix.net/docs/services/ObjectStorage/os_authenticate.html) is the docs link to explore the object storage api
 
-# Working with object storage api
+# Working with Object Storage API
 
 Once the object storage api is created we have to follow few steps to upload and access the images in the object storage.
 
