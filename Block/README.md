@@ -1,6 +1,6 @@
 # DogTracker Event Handler for PubNub BLOCKS
 
-#Pubnub block creation.
+# Pubnub block creation.
 <br>
 
 Step 1 : Login to the Pubnub account with the valid credentials.<br>
