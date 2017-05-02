@@ -1,0 +1,230 @@
+
+Message codes 
+			0 - Reload the UI page 
+			1 - Find dog breed
+			2 - Clear the database
+			3 - X-Auth-Token Expired notification
+			4 - GeoCoding Error
+
+Message types
+			req - request message from UI to block
+			resp - response message from block to UI
+
+PubNub Channels used
+			dogtracker_marker_position - Sending Maker popup position from App UI to Nodejs server
+			dogtracker_req_resp - App to Block common data channel
+
+App to Block and vice-versa :
+===============================
+
+1) Reload the UI page operation
+
+	request - 
+		format : 
+			{
+			"messagecode":<code here>,
+			"messagetype":<type here>
+			}	
+
+		example :
+		{
+			"messagecode":"0",
+			"messagetype":"req"
+		}
+	response - 
+		format :
+		{
+			"messagecode":<code here>,
+			"messagetype":<type here>,
+			"dbval":[
+						{ 
+							"url": <url of the image>, 
+							"breed": <dog breed>, 
+							"geolocation": 
+								{ 
+									"lat": <Lattitude>, 
+									"lon": <Longitude>, 
+									"address": <Address> 
+								} 
+						},
+						{.....},{.....}
+						
+					]
+		}	
+		
+		example :
+		a) when there is data in the database
+		
+		{
+			"messagecode":"0",
+			"messagetype":"resp",
+			"dbval":[
+						{ 
+							"url": "https://dal.objectstorage.open.softlayer.com/v1/AUTH_b7de27866f2e4e87862da9183a8983af/DogImages/userPhoto-1492758584963.jpeg", 
+							"breed": "Rhodesian ridgeback ", 
+							"geolocation": 
+								{ 
+									"lat": "68.65655498475738", 
+									"lon": "-43.59375000000001", 
+									"address": "Greenland" 
+								} 
+						},
+						{.....},{.....}
+						
+					]
+		}
+		b) when there is no data in the database
+		{
+			"messagecode":"0",
+			"messagetype":"resp",
+			"dbval":null
+		}
+
+
+2) Find Dog Breed 
+	request - 
+	format :
+		{
+			"messagecode":<code here>,
+			"messagetype":<type here>,
+			"url": <url of the image>, 
+			"geolocation": 
+				{ 
+					"lat": <Lattitude>, 
+					"lon": <Longitude>, 
+					"address": <Address> 
+				} 	
+		}
+	example :
+
+		{
+			"messagecode":"1",
+			"messagetype":"req"
+			"url": "https://dal.objectstorage.open.softlayer.com/v1/AUTH_b7de27866f2e4e87862da9183a8983af/DogImages/userPhoto-1492758584963.jpeg", 
+			"geolocation": 
+				{ 
+					"lat": "68.65655498475738", 
+					"lon": "-43.59375000000001", 
+					"address": "Greenland" 
+				}
+		}
+	response -
+	format :
+		 {
+			"messagecode":<code here>,
+			"messagetype":<type here>,
+			"url": <url of the image>, 
+			"breed": <dog breed>, 
+			"geolocation": 
+				{ 
+					"lat": <Lattitude>, 
+					"lon": <Longitude>, 
+					"address": <Address> 
+				} 	
+		}
+
+
+	example : 	
+		a) when dog breed was found
+		{
+			"messagecode":"1",
+			"messagetype":"resp"
+			"url": "https://dal.objectstorage.open.softlayer.com/v1/AUTH_b7de27866f2e4e87862da9183a8983af/DogImages/userPhoto-1492758584963.jpeg",
+			"breed": "Rhodesian ridgeback ", 
+			"geolocation": 
+				{ 
+					"lat": "68.65655498475738", 
+					"lon": "-43.59375000000001", 
+					"address": "Greenland" 
+				}
+		}
+
+		b) when couldnt find the dog breed 
+		{
+			"messagecode":"1",
+			"messagetype":"resp"
+			"url": "https://dal.objectstorage.open.softlayer.com/v1/AUTH_b7de27866f2e4e87862da9183a8983af/DogImages/userPhoto-1492758584963.jpeg",
+			"breed": null, 
+			"geolocation": 
+				{ 
+					"lat": "68.65655498475738", 
+					"lon": "-43.59375000000001", 
+					"address": "Greenland" 
+				}
+		}
+
+
+
+Error handling messages
+
+
+		Wrong URL and size exceed error message
+		format:
+			{
+			"messagecode":<code here>,
+			"messagetype":<type here>,
+			"queryDogBreed":<dog breed>,
+			"error":<error message> 
+				
+		}
+
+		example :
+			{
+				"messagecode":"1",
+				"messagetype":"resp",
+				"queryDogBreed":null,
+				"error":<error message>
+			}
+	
+		xhr request fail error message
+			{
+				"messagecode":"1",
+				"messagetype":"resp",
+				"queryDogBreed":null,
+				"error":"error"
+			}
+
+
+UI to Nodejs Server : 
+========================
+
+1.Map onclick Marker popup co-ordinates
+
+	channel : dogtracker_marker_position
+	
+	format :
+		{
+			"lat":<lattitude>,
+			"lon":<longitude>
+		}
+
+	example :
+		{
+			"lat": "68.65655498475738",
+			"lon": "-43.59375000000001"
+		}
+
+Nodejs server to UI : (Error handling messages)
+================================================
+
+1.X-Auth-Token expiry notification
+
+	channel : dogtracker_req_resp
+	
+	format / example :
+				{
+					"messagetype": "resp",
+					"messagecode": "3"
+				}
+
+2. Reverse Geo-Coding error notification
+
+	channel : dogtracker_req_resp
+
+	format / example :
+				{
+					"messagetype": "resp",
+					"messagecode": "4"
+				}
+
+				
