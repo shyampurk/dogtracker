@@ -46,6 +46,8 @@ Click on the Start block button(top right) to start the block.
 
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Block/dg8.png)
 
+<hr>
+
 ![alt-tag](https://github.com/shyampurk/dogtracker/blob/master/screenshots/Block/dg9.png)
 
 
