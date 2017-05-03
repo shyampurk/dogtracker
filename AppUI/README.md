@@ -58,5 +58,11 @@ Alternatively you can host the application on a cloud server and access it via i
 
 If you want to clear the previously uploaded dog images then send the following URL
 
-        http://139.59.4.109:4010/cleardb
+        http://<Up-Address>:<Port-Num>/cleardb
+        
+### Limitations
+
+1. The image size should not exceed 2 MB. 
+2. Error messages for image upload, XHR and invalid dog breed are alerted as "Image not found"
+3. The auth token for object storage is valid for one day.
   
