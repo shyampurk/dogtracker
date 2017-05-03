@@ -114,7 +114,7 @@ App to Block and vice-versa :
 			"messagecode":<code here>,
 			"messagetype":<type here>,
 			"url": <url of the image>, 
-			"breed": <dog breed>, 
+			"queryDogBreed": <dog breed>, 
 			"geolocation": 
 				{ 
 					"lat": <Lattitude>, 
@@ -130,7 +130,7 @@ App to Block and vice-versa :
 			"messagecode":"1",
 			"messagetype":"resp"
 			"url": "https://dal.objectstorage.open.softlayer.com/v1/AUTH_b7de27866f2e4e87862da9183a8983af/DogImages/userPhoto-1492758584963.jpeg",
-			"breed": "Rhodesian ridgeback ", 
+			"queryDogBreed": "Rhodesian ridgeback ", 
 			"geolocation": 
 				{ 
 					"lat": "68.65655498475738", 
@@ -139,12 +139,12 @@ App to Block and vice-versa :
 				}
 		}
 
-		b) when couldnt find the dog breed 
+		b) when dog breed not found 
 		{
 			"messagecode":"1",
 			"messagetype":"resp"
 			"url": "https://dal.objectstorage.open.softlayer.com/v1/AUTH_b7de27866f2e4e87862da9183a8983af/DogImages/userPhoto-1492758584963.jpeg",
-			"breed": null, 
+			"queryDogBreed": null, 
 			"geolocation": 
 				{ 
 					"lat": "68.65655498475738", 
