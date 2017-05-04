@@ -63,6 +63,6 @@ If you want to clear the previously uploaded dog images then send the following 
 ### Limitations
 
 1. The image size should not exceed 2 MB. 
-2. Error messages for image upload, XHR and invalid dog breed are alerted as "Image not found"
+2. Error messages for image upload, XHR and invalid dog breed are alerted as "Unknown Dog Breed"
 3. The auth token for object storage is valid for one day.
   
